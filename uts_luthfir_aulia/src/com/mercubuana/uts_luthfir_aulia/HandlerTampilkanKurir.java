@@ -1,0 +1,19 @@
+package com.mercubuana.uts_luthfir_aulia;
+
+public class HandlerTampilkanKurir {
+
+		static String getDaftarKurir(){
+			String daftar = "";
+			
+			for(Kurir k:HandlerKurir.daftarKurir){
+				daftar += k.getIdKurir() + "/"
+					   + k.getNamaKurir() + "/"
+					   + k.getNomorTelpon() + "/"
+					   + k.getTujuanPengiriman() + "/"
+					   + k.getTipePengiriman() + "\n";
+			}
+			
+			return daftar;
+			
+		}
+}

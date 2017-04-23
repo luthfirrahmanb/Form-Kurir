@@ -1,0 +1,69 @@
+package com.mercubuana.uts_luthfir_aulia;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class FormMenuUtama {
+
+	private JFrame frmFormMenuUtama;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FormMenuUtama window = new FormMenuUtama();
+					window.frmFormMenuUtama.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public FormMenuUtama() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmFormMenuUtama = new JFrame();
+		frmFormMenuUtama.setTitle("Form Menu Utama - PT. Kurir ABC");
+		frmFormMenuUtama.setBounds(100, 100, 450, 300);
+		frmFormMenuUtama.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmFormMenuUtama.getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("Kurir");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				FormKurir.main(null);
+			}
+		});
+		btnNewButton.setBounds(151, 34, 98, 26);
+		frmFormMenuUtama.getContentPane().add(btnNewButton);
+		
+		JButton btnDaftarKurir = new JButton("Daftar Kurir");
+		btnDaftarKurir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				FormTampilkanKurir.main(null);
+				
+			}
+		});
+		btnDaftarKurir.setBounds(145, 88, 125, 26);
+		frmFormMenuUtama.getContentPane().add(btnDaftarKurir);
+	}
+
+}
